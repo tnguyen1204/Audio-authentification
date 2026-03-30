@@ -39,6 +39,8 @@ The MP3 file is loaded with `librosa` at 44,100 Hz to capture all audible freque
 
 ### 2. Spectrogram
 A Short-Time Fourier Transform (STFT) is computed to get a time/frequency representation of the signal, converted to decibels.
+<img width="826" height="470" alt="image" src="https://github.com/user-attachments/assets/c9ce5005-84d4-46f1-be59-05ce332ebacd" />
+
 
 ### 3. Peak detection (constellation map)
 Local maxima are detected in the spectrogram — the most energetic points — spread across 4 frequency bands:
@@ -47,8 +49,14 @@ Local maxima are detected in the spectrogram — the most energetic points — s
 - 2,000 – 5,000 Hz
 - 5,000 – 11,000 Hz
 
+<img width="826" height="470" alt="image" src="https://github.com/user-attachments/assets/8145ae61-c274-4821-8ba0-a21e094d19de" />
+
+
 ### 4. Pairing
 Each anchor peak is associated with its N nearest neighbors in time, forming pairs. The time delta between the two peaks is kept.
+
+<img width="868" height="470" alt="image" src="https://github.com/user-attachments/assets/59aac9e1-9e7b-4168-87c9-7405e5fa7a65" />
+
 
 ### 5. Hashing
 Each pair is converted into an MD5 hash from:
